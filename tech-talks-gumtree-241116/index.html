@@ -32,13 +32,13 @@
             <p>
                 <small>Created by <a href="github.com/lachatak">Krisztian Lachata</a> / <a href="https://twitter.com/lachata_k">@lachata_k</a></small>
             </p>
-            <small>Scala developer @ <a href="www.gumtree.com">Gumtree</a></small>
+            <small>Developer @ <a href="www.gumtree.com">Gumtree</a></small>
         </section>
 
         <section data-background="#4B444B">
             <h3>AGENDA</h3>
             <ul>
-                <li>Changing environment and ist impact on our IT</li>
+                <li>Changing environment and its impact on our IT operations</li>
                 <li>Our IT vision to address the impact</li>
                 <li>Our IT strategy to achieve the vision</li>
             </ul>
@@ -55,7 +55,8 @@
                     <li>We are operating in a <span
                             style="color:lightcoral; font-style: italic">constantly changing business and technological environment</span></li>
                     <!-- nightly batch process, release processes -> days or even week delay in time to market, development practices, architecture, lack of ownership, team or even company structure, hard dependencies between teams-->
-                    <li>Solutions and processes which once proved to be efficient in the past, now <span style="color:lightcoral; font-style: italic">slows down delivery</span></li>
+                    <li>Solutions and processes which once proved to be efficient in the past, now <span style="color:lightcoral; font-style: italic">slows down delivery</span>
+                    </li>
                     <!-- Team setup is changing, technology trends are changing, business priorities are changing, way to big freedom / lack of freedom, CV driven development -> strong desire from developers to work on new technologies -->
                 </ul>
                 </br>
@@ -68,10 +69,15 @@
                 <ul>
                     <li>... my team feels <span style="color:lightcoral; font-style: italic">EMPOWERED</span> ...</li>
                     <li>my team is <span style="color:lightcoral; font-style: italic">AUTONOMOUS</span> ...</li>
-                    <li>my role, my <span style="color:lightcoral; font-style: italic">RESPONSIBILITIES</span>, my team’s ownership, the boundaries ... are all <span style="color:lightcoral; font-style: italic">WELL-DEFINED.</span></li>
-                    <li>our work is <span style="color:lightcoral; font-style: italic">CEATIVE</span>, everything we do more than once is <span style="color:lightcoral; font-style: italic">AUTOMATED</span></li>
-                    <li>we love <span style="color:lightcoral; font-style: italic">FAST FEEDBACK</span> ... no more than <span style="color:lightcoral; font-style: italic">ONE DAY FROM GOING LIVE</span></li>
-                    <li>... <span style="color:lightcoral; font-style: italic">ENGINEERING EXCELLENCE</span>  ... We’re <span style="color:lightcoral; font-style: italic">PROUD</span> of what we do ...</li>
+                    <li>my role, my <span style="color:lightcoral; font-style: italic">RESPONSIBILITIES</span>, my team’s ownership, the boundaries ... are all
+                        <span style="color:lightcoral; font-style: italic">WELL-DEFINED.</span></li>
+                    <li>our work is <span style="color:lightcoral; font-style: italic">CEATIVE</span>, everything we do more than once is <span
+                            style="color:lightcoral; font-style: italic">AUTOMATED</span></li>
+                    <li>we love <span style="color:lightcoral; font-style: italic">FAST FEEDBACK</span> ... no more than <span
+                            style="color:lightcoral; font-style: italic">ONE DAY FROM GOING LIVE</span></li>
+                    <li>... <span style="color:lightcoral; font-style: italic">ENGINEERING EXCELLENCE</span> ... We’re <span
+                            style="color:lightcoral; font-style: italic">PROUD</span> of what we do ...
+                    </li>
                 </ul>
             </section>
 
@@ -98,7 +104,7 @@
                 <li>How we shape our high level software architecture</li>
                 <li>What type of building blocks we use to form our architecture</li>
                 <li>What is the responsibility of a block</li>
-                <li>How we build a blocks</li>
+                <li>How we construct a block</li>
                 <li>What is the internal content of a block</li>
                 <li>How we integrate them into larger groups</li>
                 <li>What integration patterns, protocols, languages, databases we support</li>
@@ -116,6 +122,11 @@
 
         <section data-background="#4B444B">
             <img src="../pics/Now-what.jpg" style="height: 400px;">
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Scope of this presentation</h3>
+            <img src="../pics/Matrix.jpg" style="height: 500px;">
         </section>
 
         <section data-background="#4B444B">
@@ -200,20 +211,27 @@
                 <ul>
                     <li>Build and deploy in isolation</li>
                     <li>Test in isolation</li>
+                    <li>Run in isolation</li>
                     <li>Fault isolation</li>
                 </ul>
             </section>
             <section>
-                <h3>Integration is risk</h3>
+                <h3>Fault isolation</h3>
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle;">
                         <!--How too start application with dependencies?-->
-                        <p>Self heal - Resiliency</p>
+                        <ul>
+                            <li>Self heal - Resiliency</li>
+                            <li>Avoid cascading errors</li>
+                            <li>Fail fast</li>
+                            <li>Timeout</li>
+                        </ul>
                     </div>
                     <div style="display:inline-block; vertical-align: middle;">
                         <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
                     </div>
                 </div>
+                <p><span style="color:lightcoral; font-style: italic">Integration is risk</span></p>
             </section>
             <section>
                 <h3>Circuit breaker</h3>
@@ -264,7 +282,8 @@
 
         <section data-background="#4B444B">
             <section>
-                <h2>OpenAPI-Specification - Swagger</h2>
+                <h3>Synchronous communication</h3>
+                <p>OpenAPI-Specification - Swagger</p>
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle;">
                         <img src="../pics/Swagger-1.png" style="border: 0px; box-shadow: none; height: 250px;">
@@ -273,46 +292,68 @@
                         <img src="../pics/Swagger-2.png" style="border: 0px; box-shadow: none; height: 250px;">
                     </div>
                 </div>
+                <p><span style="color:lightgreen; font-style: italic">Well defined and controlled</span></p>
             </section>
 
             <section>
-                <h2>API definition first</h2>
-                <ul>
-                    <li>Generate clients from API definition</li>
-                    <li>Common API definition</li>
-                </ul>
-            </section>
-
-            <section>
+                <h3>API definition</h3>
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle;">
                         <ul>
+                            <li>API definition first</li>
+                            <li>Version it</li>
+                            <li>Generate clients from API definition</li>
                             <li>Backward compatible</li>
                             <li>Feature switch</li>
                             <li>Follow up stories</li>
+                            <li>Common API definition</li>
                         </ul>
                     </div>
                     <div style="display:inline-block; vertical-align: middle;">
-                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 250px;">
                     </div>
                 </div>
             </section>
         </section>
 
         <section data-background="#4B444B">
-            <h2>Event driven architecture - async comm is decouple space and time, bapi event source ?????</h2>
-            Avoiding cascading failures requires services that are fully decou‐ pled and isolated.
-        </section>
-
-        <section data-background="#4B444B">
-            <h2>back pressure ??????</h2>
-            </h2> - fast system should not overload slow system - rxjava, akka streams
+            <section>
+                <h3>Asynchronous communication</h3>
+                <p>Event driven architecture</p>
+                <ul>
+                    <li>Decoupling in space and time</li>
+                    <li>Avoiding cascading failures</li>
+                    <li>One-way "Fire-and-forget"</li>
+                    <li>No point-to-point</li>
+                    <li>Helps in isolation</li>
+                    <li>High performance and scalability</li>
+                </ul>
+                <p><span style="color:lightgreen; font-style: italic">Domain Events what domain experts care about</span></p>
+            </section>
+            <section>
+                <h3>Asynchronous communication</h3>
+                <p>Back Pressure</p>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <ul>
+                            <li>Push model instead of pull model</li>
+                            <li>Fast system should not overload slow system</li>
+                            <li>Avoiding unbounded buffering</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
+                    </div>
+                </div>
+                <p><span style="color:lightgreen; font-style: italic">We use RxJava, Akka Streams</span></p>
+            </section>
         </section>
 
         <section data-background="#4B444B">
             <section>
                 <h3>Backend For Frontend</h3>
-                <p>Rather than provide a one-size-fits-all style API, the BFF can expose a <span style="color:lightgreen; font-style: italic">different API for each client</span></p>
+                <p>Rather than provide a one-size-fits-all style API, the BFF can expose a <span style="color:lightgreen; font-style: italic">different API for each client</span>
+                </p>
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle;">
                         <img src="../pics/BFF-1.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 355px;">
@@ -324,7 +365,7 @@
                         <img src="../pics/BFF-3.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 355px;">
                     </div>
                 </div>
-                <p>We use this pattern for our mobile platform</p>
+                <p><span style="color:lightgreen; font-style: italic">We use this pattern for our mobile platform</span></p>
             </section>
             <section>
                 <h3>Benefits of BFF</h3>
@@ -352,14 +393,14 @@
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle;">
                         <ul>
-                            <li>Security Management</li>
+                            <li>Access Control</li>
                             <li>Traffic Management</li>
                             <li>Versioning</li>
                         </ul>
                     </div>
                     <div style="display:inline-block; vertical-align: middle;">
                         <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
-                        <p><span style="color:lightcoral; font-style: italic">Avoid leaking business knowledge into them</span></p>
+                        <p><span style="color:lightcoral; font-style: italic">Avoid leaking business logic into them</span></p>
                     </div>
                 </div>
             </section>
@@ -408,7 +449,7 @@
                     </div>
                     <div style="display:inline-block; vertical-align: middle;">
                         <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
-                        <p><span style="color:lightcoral; font-style: italic">Don't blur ESBs and API gateway</span> and avoid leaking business knowledge into
+                        <p><span style="color:lightcoral; font-style: italic">Don't blur ESBs and API gateway</span> and avoid leaking business logic into
                             them</p>
                     </div>
                 </div>
@@ -439,6 +480,7 @@
                     <ul>
                         <li>Test in isolation</li>
                         <li>Use stubs and mocks to eliminate external dependencies</li>
+                        <li>Don't rely on existing data</li>
                         <li>Use test pyramid</li>
                     </ul>
                 </div>
@@ -464,7 +506,7 @@
                 </div>
             </div>
 
-            <p><span style="color:lightgreen; font-style: italic">We use Jenkinsfile and pipeline DSL</span></p>
+            <p><span style="color:lightgreen; font-style: italic">We use Jenkinsfile + custom pipeline DSL</span></p>
         </section>
 
         <section data-background="#4B444B">
@@ -503,7 +545,7 @@
         </section>
 
         <!--<section data-background="#4B444B">-->
-            <!--Location transparency and service discovery ?????-->
+        <!--Location transparency and service discovery ?????-->
         <!--</section>-->
 
         <section data-background="#4B444B">
@@ -606,7 +648,7 @@
                 <div style="display:inline-block; vertical-align: middle;">
                     <img src="../pics/Sum.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
                 </div>
-                <p><span style="color:lightgreen; font-style: italic">which helps achieving our vision</span></p>
+                <p><span style="color:lightgreen; font-style: italic">which helps achieving our IT vision</span></p>
             </div>
 
         </section>
