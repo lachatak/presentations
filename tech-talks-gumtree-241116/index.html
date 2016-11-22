@@ -1,61 +1,665 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/black.css">
+    <link rel="stylesheet" href="../css/reveal.css">
+    <link rel="stylesheet" href="../css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background="#4B444B">
-					<h1>A road to micro engines</h1>
-					<h3>How we transform our monolithic application</h3>
-					<p>
-						<small>Created by <a href="github.com/lachatak">Krisztian Lachata</a> / <a href="https://twitter.com/lachata_k">@lachata_k</a></small>
-					</p>
-				</section>
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
 
-				<section data-background="#4B444B">Slide 2</section>
-			</div>
-		</div>
+        <!-- Opening -->
+        <section data-background="#4B444B">
+            <h1>A road to micro engines</h1>
+            <h3>How we transform our monolithic application</h3>
+            <p>
+                <small>Created by <a href="github.com/lachatak">Krisztian Lachata</a> / <a href="https://twitter.com/lachata_k">@lachata_k</a></small>
+            </p>
+            <small>Scala developer @ <a href="www.gumtree.com">Gumtree</a></small>
+        </section>
 
-		<div style="position: fixed; display: block; left: 10px; bottom: 10px">
-			<img src="../pics/Gumtree-logo.png" style="height: 80px;">
-		</div>
+        <section data-background="#4B444B">
+            <h3>AGENDA</h3>
+            <ul>
+                <li>Changing environment and is impact on our IT</li>
+                <li>Our IT vision to address the impact</li>
+                <li>Our IT strategy to achieve the vision</li>
+            </ul>
+        </section>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.js"></script>
+        <!-- What is micro engine -->
+        <section data-background="#4B444B">
 
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
+            <section>
+                <!-- not performing as we wanted -->
+                <h3>Constantly changing environment</h3>
+                <ul>
+                    <!-- number of clients, provided services, priorities, client expectations, new technologies, big data, mobile, cloud computation, real time processing, intenet of things-->
+                    <li>We are operating in a <span
+                            style="color:lightcoral; font-style: italic">constantly changing business and technological environment</span></li>
+                    <!-- nightly batch process, release processes -> days or even week delay in time to market, development practices, architecture, lack of ownership, team or even company structure, hard dependencies between teams-->
+                    <li>Solutions and processes which once proved to be efficient in the past, now <span style="color:lightcoral; font-style: italic">slows down delivery</span></li>
+                    <!-- Team setup is changing, technology trends are changing, business priorities are changing, way to big freedom / lack of freedom, CV driven development -> strong desire from developers to work on new technologies -->
+                </ul>
+                </br>
+                </br>
+                <h3><span style="color:lightcoral; font-style: italic">Time to market!</span></h3>
+            </section>
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+            <section>
+                <h3>Summary of our IT vision</h3>
+                <ul>
+                    <li>... my team feels <span style="color:lightcoral; font-style: italic">EMPOWERED</span> ...</li>
+                    <li>my team is <span style="color:lightcoral; font-style: italic">AUTONOMOUS</span> ...</li>
+                    <li>my role, my <span style="color:lightcoral; font-style: italic">RESPONSIBILITIES</span>, my team’s ownership, the boundaries ... are all <span style="color:lightcoral; font-style: italic">WELL-DEFINED.</span></li>
+                    <li>our work is <span style="color:lightcoral; font-style: italic">CEATIVE</span>, everything we do more than once is <span style="color:lightcoral; font-style: italic">AUTOMATED</span></li>
+                    <li>we love <span style="color:lightcoral; font-style: italic">FAST FEEDBACK</span> ... no more than <span style="color:lightcoral; font-style: italic">ONE DAY FROM GOING LIVE</span></li>
+                    <li>... <span style="color:lightcoral; font-style: italic">ENGINEERING EXCELLENCE</span>  ... We’re <span style="color:lightcoral; font-style: italic">PROUD</span> of what we do ...</li>
+                </ul>
+            </section>
+
+        </section>
+
+        <section data-background="#4B444B">
+            <img src="../pics/Now-what.jpg" style="height: 400px;">
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Organisational constraint</h3>
+            <ul>
+                <li>How the company, department, team structures are formed</li>
+                <li>What type of communication is the dominant between business units</li>
+                <li>How far the business units are from each other in time and space</li>
+                <li>Trust</li>
+                <li>Conway-Law</li>
+            </ul>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Technological considerations</h3>
+            <ul>
+                <li>How we shape our high level software architecture</li>
+                <li>What type of building blocks we use to form our architecture</li>
+                <li>What is the responsibility of a block</li>
+                <li>How we build a blocks</li>
+                <li>What is the internal content of a block</li>
+                <li>How we integrate them into larger groups</li>
+                <li>What integration patterns, protocols, languages, databases we support</li>
+            </ul>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Social and cultural aspect</h3>
+            <ul>
+                <li>How we share our success and failures</li>
+                <li>How we pay back our debt to the community</li>
+                <li>What is the open source policy in the company</li>
+            </ul>
+        </section>
+
+        <section data-background="#4B444B">
+            <img src="../pics/Now-what.jpg" style="height: 400px;">
+        </section>
+
+        <section data-background="#4B444B">
+            <img src="../pics/Strategy.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>Slice the beast</h3>
+                <p>aka</p>
+                <h3>Microservices</h3>
+                <p>Collection of development <span style="color:lightgreen; font-style: italic">best practices and techniques</span> which has huge impact on
+                    all the technical considerations</p>
+                <h3><span style="color:lightgreen; font-style: italic">Autonomy!</span></h3>
+                </br>
+                <h3 class="fragment"><span style="color:lightcoral; font-style: italic">With FREEDOM comes RESPONSIBILITY</span></h3>
+            </section>
+
+            <section>
+                <div style="text-align:center;">
+                    <h3>Single Responsibility Principle</h3>
+                    <div style="display:inline-block; vertical-align: middle; width: 700px;">
+                        <ul>
+                            <li>Write programs that <span style="color:lightgreen; font-style: italic">do one thing and do it well</span></li>
+                            <li>Write programs to <span style="color:lightgreen; font-style: italic">work together</span></li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- Domain driven design-->
+        <section data-background="#4B444B">
+            <section>
+                <h3>Domain Driven Design</h3>
+                <p>Placing the project's <span style="color:lightgreen; font-style: italic">primary focus on the core domain and domain logic</span></p>
+            </section>
+            <section>
+                <h2>Strategic and tactical patterns</h2>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle; width: 450px;">
+                        <ul>
+                            <li>Bounded Context</li>
+                            <li>Context mapping</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle; width: 500px;">
+                        <ul>
+                            <li>Ubiquitous language</li>
+                            <li>Hexagonal architecture</li>
+                            <li>Anti-corruption layer</li>
+                            <li>Domain events</li>
+                            <li>Factories, Repositories, Entities, Value objects</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section data-background="#4B444B">
+                <h3>Bounded Context</h3>
+                <div>
+                    <img src="../pics/Bounded-Context.jpg" style="height: 500px;">
+                </div>
+            </section>
+
+            <section data-background="#4B444B">
+                <h3>Hexagonal architecture</h3>
+                <div>
+                    <img src="../pics/Hexagonal-1.png" style="height: 400px;">
+                </div>
+                <p>One of the main principles in our microservice design</p>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>Isolation at multiple level</h3>
+                <ul>
+                    <li>Build and deploy in isolation</li>
+                    <li>Test in isolation</li>
+                    <li>Fault isolation</li>
+                </ul>
+            </section>
+            <section>
+                <h3>Integration is risk</h3>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <!--How too start application with dependencies?-->
+                        <p>Self heal - Resiliency</p>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Circuit breaker</h3>
+                <div>
+                    <img src="../pics/Circuit-Breaker.png" style="height: 500px;">
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Poligloth persistency</h3>
+            <div>
+                <img src="../pics/DBs.jpg" style="height: 350px;">
+            </div>
+            <p><span style="color:lightgreen; font-style: italic">Find the best tool for the purpose</span></p>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>One microservice is no microservice</h3>
+                <p>They come in systems</p>
+            </section>
+
+            <section>
+                <h3>How to integrate?</h3>
+                <div>
+                    <img src="../pics/Hexagonal-integration.png" style="height: 500px;">
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h2>Sync VS Async</h2>
+            </section>
+
+            <section>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <h3>Rest is still considered to be the default approach</h3>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 250px;">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h2>OpenAPI-Specification - Swagger</h2>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Swagger-1.png" style="border: 0px; box-shadow: none; height: 250px;">
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Swagger-2.png" style="border: 0px; box-shadow: none; height: 250px;">
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>API definition first</h2>
+                <ul>
+                    <li>Generate clients from API definition</li>
+                    <li>Common API definition</li>
+                </ul>
+            </section>
+
+            <section>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <ul>
+                            <li>Backward compatible</li>
+                            <li>Feature switch</li>
+                            <li>Follow up stories</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 200px;">
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <h2>Event driven architecture - async comm is decouple space and time, bapi event source ?????</h2>
+            Avoiding cascading failures requires services that are fully decou‐ pled and isolated.
+        </section>
+
+        <section data-background="#4B444B">
+            <h2>back pressure ??????</h2>
+            </h2> - fast system should not overload slow system - rxjava, akka streams
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>Backend For Frontend</h3>
+                <p>Rather than provide a one-size-fits-all style API, the BFF can expose a <span style="color:lightgreen; font-style: italic">different API for each client</span></p>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/BFF-1.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 355px;">
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/BFF-2.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 355px;">
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/BFF-3.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 355px;">
+                    </div>
+                </div>
+                <p>We use this pattern for our mobile platform</p>
+            </section>
+            <section>
+                <h3>Benefits of BFF</h3>
+                <ul>
+                    <li>Reduce Chattiness</li>
+                    <li>Distribute API Development</li>
+                    <li>Mitigate Deployment Risks</li>
+                    <li>Support Multiple Languages</li>
+                    <li>Distribute Operations</li>
+                </ul>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>API Gateway</h3>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/BFF-4.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 500px;">
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Benefits of API Gateway</h3>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <ul>
+                            <li>Security Management</li>
+                            <li>Traffic Management</li>
+                            <li>Versioning</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                        <p><span style="color:lightcoral; font-style: italic">Avoid leaking business knowledge into them</span></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>Consumer Driven Contracts</h3>
+                <ul>
+                    <li>A <span style="color:lightgreen; font-style: italic">Contract</span> is a collection of agreements between the <span
+                            style="color:lightgreen; font-style: italic">Consumer</span> and an <span
+                            style="color:lightgreen; font-style: italic">API Provider</span> that describes the interactions that can take
+                        place between them
+                    </li>
+                    <li><span style="color:lightgreen; font-style: italic">Consumer Driven Contracts is a pattern</span> that drives the development of the
+                        Provider from its Consumers point of view
+                    </li>
+                </ul>
+                <p><span style="color:lightgreen; font-style: italic">Pact is a testing tool</span> that guarantees those Contracts are satisfied</p>
+            </section>
+            <section>
+                <h3>Define Pacts</h3>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Pact-1.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 400px;">
+                </div>
+            </section>
+            <section>
+                <h3>Verify Pacts</h3>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Pact-2.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 400px;">
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <section>
+                <h3>Enterprise Service Bus</h3>
+                <p>and</p>
+                <h3>Enterprise Integration Patterns</h3>
+                <div style="text-align:center;">
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <ul>
+                            <li>Today's applications rarely live in isolation</li>
+                            <li>Architecting integration solutions is a complex task</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                        <p><span style="color:lightcoral; font-style: italic">Don't blur ESBs and API gateway</span> and avoid leaking business knowledge into
+                            them</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div style="text-align:center;">
+                    <h3>Benefits of ESB</h3>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <ul>
+                            <li>150+ connectors across various categories</li>
+                            <li>Transports</li>
+                            <li>Formats & protocols</li>
+                            <li>Route, Mediate and Transform</li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block; vertical-align: middle;">
+                        <img src="../pics/WSO2-logo.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    </div>
+                    <p></p>
+                </div>
+            </section>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Testing strategy</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li>Test in isolation</li>
+                        <li>Use stubs and mocks to eliminate external dependencies</li>
+                        <li>Use test pyramid</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Pipeline as code</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li>Build pipeline is crucial for microservices working together</li>
+                        <li>Various phases in software lifecycle</li>
+                        <li>Interaction with different tools</li>
+                        <li>Versioned and Tested</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/jenkins_ci.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+
+            <p><span style="color:lightgreen; font-style: italic">We use Jenkinsfile and pipeline DSL</span></p>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>DevOps Delivered</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li><span style="color:lightgreen; font-style: italic">Configuration management</span> with Consul</li>
+                        <li>Terraform helps write, plan, and create <span style="color:lightgreen; font-style: italic">infrastructure as code</span></li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Hashicorp.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Immutable architecture</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li>Immutable infrastructure provides stability, efficiency</li>
+                        <li>Simplifying operations</li>
+                        <li>Continuous deployments, fewer failures</li>
+                        <li>Helps moving to cloud and achieve 1-push-1-release</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/jenkins_ci.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/Debian_logo.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/Consul.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/Terraform.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+        </section>
+
+        <!--<section data-background="#4B444B">-->
+            <!--Location transparency and service discovery ?????-->
+        <!--</section>-->
+
+        <section data-background="#4B444B">
+            <h3>Eventual Consistency</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li>Strong consistency require a loads of effort</li>
+                        <li>Avoid distributed transactions</li>
+                        <li>Avoid XA transaction</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+                <span style="color:lightcoral; font-style: italic">Always challenge if STRONG consistency is really needed!</span>
+                <p><span style="color:lightcoral; font-style: italic">Ask yourself, ask the business!</span></p>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Importance of metrics</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <p>Should be first class citizen of your application</p>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/influxdb.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 80px;">
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/grafana-logo.svg" style="background: #4B444B; border: 0px; box-shadow: none; height: 100px;">
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Platform standards</h3>
+            <p>Gumtree platform is a set of <span style="color:lightgreen; font-style: italic">AUTONOMOUS</span> but <span
+                    style="color:lightgreen; font-style: italic">COLLABORATING</span> teams!</p>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/standards.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 110px;">
+                </div>
+            </div>
+            <p><span style="color:lightcoral; font-style: italic">How to engage developers?</span></p>
+            <p>Versioned github project containing agreed standards</p>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Team standards</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle; width: 1000px;">
+                    <ul>
+                        <li><span style="color:lightgreen; font-style: italic">Code ownership</span></li>
+                        <li>Platform standard extensions</li>
+                        <li>Pull Request and code review policy</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/git-pull-request.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Reap the benefits of other tools</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle; width: 1000px;">
+                    <ul>
+                        <li>Analyse your team dynamics</li>
+                        <li>Support your release and build process</li>
+                        <li>Automate every possible bit of your software lifecycle</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/jenkins_ci.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/jira.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/Github.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                    <img src="../pics/slack.svg" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4B444B">
+            <h3>Micro engines</h3>
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <ul>
+                        <li>Organisational</li>
+                        <li>Technical</li>
+                        <li>Socal + cultural</li>
+                    </ul>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Sum.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
+                </div>
+                <p><span style="color:lightgreen; font-style: italic">which helps achieving our vision</span></p>
+            </div>
+
+        </section>
+
+        <!--<section data-background="#4B444B">-->
+        <!--http://martinfowler.com/bliki/CircuitBreaker.html-->
+        <!--http://martinfowler.com/bliki/ContinuousDelivery.html-->
+        <!--http://martinfowler.com/articles/consumerDrivenContracts.html-->
+        <!--http://martinfowler.com/bliki/PolyglotPersistence.html-->
+        <!--http://dius.com.au/2016/02/03/microservices-pact/-->
+        <!--https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md-->
+        <!--http://techblog.netflix.com/2013/01/optimizing-netflix-api.html-->
+        <!--http://www.enterpriseintegrationpatterns.com/-->
+        <!--https://www.thoughtworks.com/radar/techniques-->
+        <!--</section>-->
+
+        <section data-background="#4B444B">
+
+            <div style="text-align:center;">
+                <div style="display:inline-block; vertical-align: middle;">
+                    <h1>Questions</h1>
+                </div>
+                <div style="display:inline-block; vertical-align: middle;">
+                    <img src="../pics/Gumtree-logo2.png" style="border: 0px; box-shadow: none;">
+                </div>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+<div style="position: fixed; display: block; left: 10px; bottom: 10px">
+    <img src="../pics/Gumtree-logo.png" style="height: 80px;">
+</div>
+
+<script src="../lib/js/head.min.js"></script>
+<script src="../js/reveal.js"></script>
+
+<script>
+    // More info https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        history: true,
+
+        // More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            {src: 'plugin/markdown/marked.js'},
+            {src: 'plugin/markdown/markdown.js'},
+            {src: 'plugin/notes/notes.js', async: true},
+            {
+                src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+            }
+        ]
+    });
+</script>
+</body>
 </html>
