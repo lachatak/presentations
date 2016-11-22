@@ -87,41 +87,18 @@
         </section>
 
         <section data-background="#4B444B">
-            <h3>Organisational constraint</h3>
+            <h3>Constraints</h3>
             <ul>
-                <li>How the company, department, team structures are formed</li>
-                <li>What type of communication is the dominant between business units</li>
-                <li>How far the business units are from each other in time and space</li>
-                <li>Trust</li>
-                <li>Conway-Law</li>
+                <li>Organizational</li>
+                <li>Technological</li>
+                <li>Cultural</li>
+                <li>Social</li>
             </ul>
         </section>
 
-        <section data-background="#4B444B">
-            <h3>Technological considerations</h3>
-            <ul>
-                <li>How we shape our high level software architecture</li>
-                <li>What type of building blocks we use to form our architecture</li>
-                <li>What is the responsibility of a block</li>
-                <li>How we construct a block</li>
-                <li>What is the internal content of a block</li>
-                <li>How we integrate them into larger groups</li>
-                <li>What integration patterns, protocols, languages, databases we support</li>
-            </ul>
-        </section>
-
-        <section data-background="#4B444B">
-            <h3>Social and cultural aspect</h3>
-            <ul>
-                <li>How we share our success and failures</li>
-                <li>How we pay back our debt to the community</li>
-                <li>What is the open source policy in the company</li>
-            </ul>
-        </section>
-
-        <section data-background="#4B444B">
-            <img src="../pics/Now-what.jpg" style="height: 400px;">
-        </section>
+        <!--<section data-background="#4B444B">-->
+            <!--<img src="../pics/Now-what.jpg" style="height: 400px;">-->
+        <!--</section>-->
 
         <section data-background="#4B444B">
             <h3>Scope of this presentation</h3>
@@ -172,14 +149,14 @@
                 <div style="text-align:center;">
                     <div style="display:inline-block; vertical-align: middle; width: 450px;">
                         <ul>
-                            <li>Bounded Context</li>
+                            <li><span style="color:lightgreen; font-style: italic">Bounded Context</span></li>
                             <li>Context mapping</li>
                         </ul>
                     </div>
                     <div style="display:inline-block; vertical-align: middle; width: 500px;">
                         <ul>
                             <li>Ubiquitous language</li>
-                            <li>Hexagonal architecture</li>
+                            <li><span style="color:lightgreen; font-style: italic">Hexagonal architecture</span></li>
                             <li>Anti-corruption layer</li>
                             <li>Domain events</li>
                             <li>Factories, Repositories, Entities, Value objects</li>
@@ -240,13 +217,13 @@
             </section>
         </section>
 
-        <section data-background="#4B444B">
-            <h3>Poligloth persistency</h3>
-            <div>
-                <img src="../pics/DBs.jpg" style="height: 350px;">
-            </div>
-            <p><span style="color:lightgreen; font-style: italic">Find the best tool for the purpose</span></p>
-        </section>
+        <!--<section data-background="#4B444B">-->
+            <!--<h3>Poligloth persistency</h3>-->
+            <!--<div>-->
+                <!--<img src="../pics/DBs.jpg" style="height: 350px;">-->
+            <!--</div>-->
+            <!--<p><span style="color:lightgreen; font-style: italic">Find the best tool for the purpose</span></p>-->
+        <!--</section>-->
 
         <section data-background="#4B444B">
             <section>
@@ -257,7 +234,7 @@
             <section>
                 <h3>How to build, test, run, integrate them?</h3>
                 <div>
-                    <img src="../pics/Hexagonal-integration.png" style="height: 480px;">
+                    <img src="../pics/Hexagonal-integration.png" style="height: 460px;">
                 </div>
             </section>
         </section>
@@ -474,22 +451,22 @@
             </section>
         </section>
 
-        <section data-background="#4B444B">
-            <h3>Testing strategy</h3>
-            <div style="text-align:center;">
-                <div style="display:inline-block; vertical-align: middle;">
-                    <ul>
-                        <li>Test in isolation</li>
-                        <li>Use stubs and mocks to eliminate external dependencies</li>
-                        <li>Don't rely on existing data</li>
-                        <li>Use test pyramid</li>
-                    </ul>
-                </div>
-                <div style="display:inline-block; vertical-align: middle;">
-                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
-                </div>
-            </div>
-        </section>
+        <!--<section data-background="#4B444B">-->
+            <!--<h3>Testing strategy</h3>-->
+            <!--<div style="text-align:center;">-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<ul>-->
+                        <!--<li>Test in isolation</li>-->
+                        <!--<li>Use stubs and mocks to eliminate external dependencies</li>-->
+                        <!--<li>Don't rely on existing data</li>-->
+                        <!--<li>Use test pyramid</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</section>-->
 
         <section data-background="#4B444B">
             <h3>Pipeline as code</h3>
@@ -549,43 +526,43 @@
         <!--Location transparency and service discovery ?????-->
         <!--</section>-->
 
-        <section data-background="#4B444B">
-            <h3>Eventual Consistency</h3>
-            <div style="text-align:center;">
-                <div style="display:inline-block; vertical-align: middle;">
-                    <ul>
-                        <li>Strong consistency require a loads of effort</li>
-                        <li>Avoid distributed transactions</li>
-                        <li>Avoid XA transaction</li>
-                    </ul>
-                </div>
-                <div style="display:inline-block; vertical-align: middle;">
-                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
-                </div>
-                <span style="color:lightcoral; font-style: italic">Always challenge if STRONG consistency is really needed!</span>
-                <p><span style="color:lightcoral; font-style: italic">Ask yourself, ask the business!</span></p>
-            </div>
-        </section>
+        <!--<section data-background="#4B444B">-->
+            <!--<h3>Eventual Consistency</h3>-->
+            <!--<div style="text-align:center;">-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<ul>-->
+                        <!--<li>Strong consistency require a loads of effort</li>-->
+                        <!--<li>Avoid distributed transactions</li>-->
+                        <!--<li>Avoid XA transaction</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">-->
+                <!--</div>-->
+                <!--<span style="color:lightcoral; font-style: italic">Always challenge if STRONG consistency is really needed!</span>-->
+                <!--<p><span style="color:lightcoral; font-style: italic">Ask yourself, ask the business!</span></p>-->
+            <!--</div>-->
+        <!--</section>-->
 
-        <section data-background="#4B444B">
-            <h3>Importance of metrics</h3>
-            <div style="text-align:center;">
-                <div style="display:inline-block; vertical-align: middle;">
-                    <p>Should be first class citizen of your application</p>
-                </div>
-                <div style="display:inline-block; vertical-align: middle;">
-                    <img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">
-                </div>
-            </div>
-            <div style="text-align:center;">
-                <div style="display:inline-block; vertical-align: middle;">
-                    <img src="../pics/influxdb.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 80px;">
-                </div>
-                <div style="display:inline-block; vertical-align: middle;">
-                    <img src="../pics/grafana-logo.svg" style="background: #4B444B; border: 0px; box-shadow: none; height: 100px;">
-                </div>
-            </div>
-        </section>
+        <!--<section data-background="#4B444B">-->
+            <!--<h3>Importance of metrics</h3>-->
+            <!--<div style="text-align:center;">-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<p>Should be first class citizen of your application</p>-->
+                <!--</div>-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<img src="../pics/Exclamation.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 150px;">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div style="text-align:center;">-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<img src="../pics/influxdb.png" style="background: #4B444B; border: 0px; box-shadow: none; height: 80px;">-->
+                <!--</div>-->
+                <!--<div style="display:inline-block; vertical-align: middle;">-->
+                    <!--<img src="../pics/grafana-logo.svg" style="background: #4B444B; border: 0px; box-shadow: none; height: 100px;">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</section>-->
 
         <section data-background="#4B444B">
             <h3>Platform standards</h3>
