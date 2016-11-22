@@ -321,11 +321,13 @@
                 <h3>Asynchronous communication</h3>
                 <p>Event driven architecture</p>
                 <ul>
+                    <li>Events flow in decoupled systems</li>
                     <li>Decoupling in space and time</li>
                     <li>Avoiding cascading failures</li>
                     <li>One-way "Fire-and-forget"</li>
                     <li>No point-to-point</li>
                     <li>Helps in isolation</li>
+                    <li>Idempotency</li>
                     <li>High performance and scalability</li>
                 </ul>
                 <p><span style="color:lightgreen; font-style: italic">Domain Events what domain experts care about</span></p>
@@ -337,6 +339,7 @@
                     <div style="display:inline-block; vertical-align: middle;">
                         <ul>
                             <li>Push model instead of pull model</li>
+                            <li>Push events can be observed by multiple subscribers</li>
                             <li>Fast system should not overload slow system</li>
                             <li>Avoiding unbounded buffering</li>
                         </ul>
